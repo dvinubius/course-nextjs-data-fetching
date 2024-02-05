@@ -1,6 +1,6 @@
 'use client'
 
-import { ENDPOINT_BASE_URL, OUR_BASE_URL } from '@/constants/fetching';
+import { OUR_BASE_URL } from '@/constants/fetching';
 import { AppData } from '@/types/AppData';
 import React, { useEffect } from 'react'
 
@@ -13,7 +13,7 @@ function ClientSecure() {
     const fetchData = async () => {
       try {
         // get from route handler
-        const response = await fetch(`${OUR_BASE_URL}/api`);
+        const response = await fetch(`${OUR_BASE_URL}/api/time-data`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -30,7 +30,7 @@ function ClientSecure() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-8 h-screen p-16'>
+    <div className='flex flex-col gap-8 h-screen p-16 pt-32'>
       <h1 className='text-4xl'>Secure Client Side</h1>
       <p className='bg-blue-50 min-w-[600px] max-w-min p-8 rounded-lg'>
         Data is fetched by client after the page is rendered.

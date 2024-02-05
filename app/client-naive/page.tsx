@@ -29,7 +29,7 @@ function ClientNaive() {
   }, []);
 
   return (
-    <div className='flex flex-col gap-8 h-screen p-16'>
+    <div className='flex flex-col gap-8 h-screen p-16 pt-32'>
       <h1 className='text-4xl'>Naive Client Side</h1>
       <p className='bg-blue-50 min-w-[600px] max-w-min p-8 rounded-lg'>
         Data is fetched by client after the page is rendered.
