@@ -5,29 +5,10 @@ import { AppData } from '@/types/AppData';
 import React, { useEffect } from 'react'
 
 function ClientSecure() {
-  const [data, setData] = React.useState<AppData | null>(null);
-  const [loading, setLoading] = React.useState<boolean>(true);
-  const [error, setError] = React.useState<Error | null>(null);
+  // manage component state
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        // get from route handler
-        const response = await fetch(`${OUR_BASE_URL}/api`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const {data} = await response.json();
-        setData(data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        setLoading(false);
-        setError(error as Error);
-      }
-    };
-    fetchData();
-  }, []);
+  // fetch data from the timedata backend via a route handler
+  // use the ENDPOINT_BASE_URL & OUR_BASE_URL for convenience
 
   return (
     <div className='flex flex-col gap-8 h-screen p-16'>
@@ -42,13 +23,14 @@ function ClientSecure() {
       <div className='w-full h-[400px] flex flex-col items-center justify-center 
           border bg-white rounded-lg shadow-sm 
           font-mono text-2xl'>
-        {loading && <p className='text-gray-500'>Loading...</p>}
-        {error && <p className='text-red'>Error: {error.message}</p>}
-        {data && (
-          <span className='text-purple-800'>
-            {data.data}
-          </span>
-        )}
+        {/* 
+        
+          ~~ your code here ~~
+        
+          - account for loading and error states
+          - display the fetched data
+        
+        */}
       </div>
     </div>
   )
