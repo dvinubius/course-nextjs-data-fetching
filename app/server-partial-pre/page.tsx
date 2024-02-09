@@ -11,7 +11,7 @@ function ServerPartialPre() {
 
   return (
     <div className='flex flex-col gap-8 h-screen p-16 pt-32'>
-      <h1 className='text-4xl'>Server Dynamic</h1>
+      <h1 className='text-4xl'>Server Static + Dynamic</h1>
       <p className='bg-blue-50 min-w-[600px] max-w-min p-8 rounded-lg'>
         Data is fetched by the backend during DEPLOYMENT while building the page.
         <br/> <br/>
